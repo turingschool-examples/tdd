@@ -1,14 +1,16 @@
 export default class ZooKeeper {
-  constructor() {
+  constructor(name, species) {
+    this.name = name;
+    this.species = species;
     this.fridge = {
       bamboo: 'plant',
       steak: 'meat',
-      corn: 'plant',
+      carrots: 'plant',
       grass: 'plant',
       pork: 'meat',
       fruit: 'plant',
-      zeebra: 'meat',
-      alpaca: 'meat'
+      alpaca: 'meat',
+      mollusks: 'meat'
     };
   }
 }
