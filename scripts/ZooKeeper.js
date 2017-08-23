@@ -1,7 +1,6 @@
 export default class ZooKeeper {
-  constructor(name, species) {
+  constructor(name) {
     this.name = name;
-    this.species = species;
     this.fridge = {
       bamboo: 'plant',
       steak: 'meat',
@@ -12,5 +11,9 @@ export default class ZooKeeper {
       alpaca: 'meat',
       mollusks: 'meat'
     };
+  }
+
+  sayHi() {
+    return 'Hi my name is ' + this.name;
   }
 }
