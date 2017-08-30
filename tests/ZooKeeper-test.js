@@ -17,12 +17,18 @@ describe('Zookeeper', () => {
     expect(zookeeper.animals).to.deep.equal([ po ]);
   });
 
+  it.skip('zookeeper should be able to grab food from inventory', {
+    let food = zooKeeper.grabFood(‘plant’)
+
+    expect(food).to.equal('bamboo');
+  })
+
   it.skip('zookeeper should be able to take inventory', {
-    let fridgeInventory = zookeeper.getFridgeInventory();
+    let fridgeInventory = zookeeper.takeFridgeInventory();
 
     expect(fridgeInventory).to.deep.equal({
       plant: 4,
       meat: 4
-    })
+    });
   })
 })

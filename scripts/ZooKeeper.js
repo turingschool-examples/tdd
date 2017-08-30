@@ -4,12 +4,12 @@ export default class ZooKeeper {
     this.fridge = {
       bamboo: 'plant',
       steak: 'meat',
-      carrots: 'plant',
+      corn: 'plant',
       grass: 'plant',
       pork: 'meat',
       fruit: 'plant',
-      alpaca: 'meat',
-      mollusks: 'meat'
+      zeebra: 'meat',
+      alpaca: 'meat'
     };
   }
 
