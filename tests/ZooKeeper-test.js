@@ -1,11 +1,12 @@
 import { expect } from 'chai';
 import ZooKeeper from '../scripts/ZooKeeper';
+import Panda from '../scripts/Panda';
 
 describe('Zookeeper', () => {
-  let zookeeper = new ZooKeeper('Kevin');
+  let zookeeper = new ZooKeeper('Taylor');
 
-  it('should have a name and species', () => {
-    expect(zookeeper.name).to.equal('Kevin');
+  it('should have a name', () => {
+    expect(zookeeper.name).to.equal('Taylor');
   })
 
   it.skip('should be able to add animals', () => {
@@ -17,13 +18,13 @@ describe('Zookeeper', () => {
     expect(zookeeper.animals).to.deep.equal([ po ]);
   });
 
-  it.skip('zookeeper should be able to grab food from inventory', {
-    let food = zooKeeper.grabFood(‘plant’)
+  it.skip ('zookeeper should be able to grab food from inventory', () => {
+    let food = zookeeper.grabFood('plant')
 
     expect(food).to.equal('bamboo');
   })
 
-  it.skip('zookeeper should be able to take inventory', {
+  it.skip('zookeeper should be able to take inventory', () => {
     let fridgeInventory = zookeeper.takeFridgeInventory();
 
     expect(fridgeInventory).to.deep.equal({
