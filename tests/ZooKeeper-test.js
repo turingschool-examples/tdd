@@ -7,4 +7,22 @@ describe('Zookeeper', () => {
   it('should have a name and species', () => {
     expect(zookeeper.name).to.equal('Kevin');
   })
+
+  it.skip('should be able to add animals', () => {
+    let po = new Panda('Po Ping', 27);
+
+    zookeeper.addAnimal(po);
+
+    expect(zookeeper.animals.length).to.equal(1);
+    expect(zookeeper.animals).to.deep.equal([ po ]);
+  });
+
+  it.skip('zookeeper should be able to take inventory', {
+    let fridgeInventory = zookeeper.getFridgeInventory();
+
+    expect(fridgeInventory).to.deep.equal({
+      plant: 4,
+      meat: 4
+    })
+  })
 })
