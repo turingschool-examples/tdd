@@ -132,22 +132,6 @@ describe('BinaryTree', () => {
     });
   });
 
-  describe('SORT', () => {
-    it.skip('should return an empty array if no nodes exist', () => {
-
-    });
-
-    it.skip('should return a sorted array of tree elements, small to large', () => {
-      tree.insert(5)
-      tree.insert(4)
-      tree.insert(6)
-      tree.insert(7)
-      tree.insert(3)
-      tree.insert(2)
-      tree.insert(2102)
-    });
-  });
-
   describe('MIN and MAX', () => {
 
     it.skip('min should return null if no nodes exist', () => {
@@ -176,6 +160,10 @@ describe('BinaryTree', () => {
 
     });
   });
+  
+  describe('getCount', () => {});
+
+  describe('getSum', () => {});
 
   describe('DELETE', () => {
     beforeEach(() => {
@@ -237,10 +225,6 @@ describe('BinaryTree', () => {
       // expect(tree.root.right.left.data).to.equal(5);
     })
   })
-
-  describe('getCount', () => {});
-
-  describe('getSum', () => {});
 
   describe('getLevelofNode', () => {
     //returns how may levels down from root node the searched value is
