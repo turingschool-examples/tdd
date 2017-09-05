@@ -13,7 +13,7 @@ describe('BinaryTree', () => {
     expect(tree.root).to.equal(null);
   });
 
-  describe('PUSH', () => {
+  describe('INSERT', () => {
     it.skip('should be able to add a node to the Tree', () => {
       tree.insert(new Node(20));
 
