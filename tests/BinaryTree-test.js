@@ -15,46 +15,46 @@ describe('BinaryTree', () => {
 
   describe('INSERT', () => {
     it.skip('should be able to add a node to the Tree', () => {
-      tree.insert(new Node(20));
+      tree.insert(20);
 
       expect(tree.root.data).to.equal(20);
     });
 
     it.skip('should move smaller data to the left', () => {
-      tree.insert(new Node(20));
-      tree.insert(new Node(5));
+      tree.insert(20);
+      tree.insert(5);
 
       expect(tree.root.left.data).to.equal(5);
     });
 
     it.skip('should move larger data to the right', () => {
-      tree.insert(new Node(20));
-      tree.insert(new Node(30));
+      tree.insert(20);
+      tree.insert(30);
 
       expect(tree.root.right.data).to.equal(30);
     });
 
     it.skip('should add data equal to the rootNode to the left', () => {
-      tree.insert(new Node(20));
-      tree.insert(new Node(20));
+      tree.insert(20);
+      tree.insert(20);
 
       expect(tree.root.left.data).to.equal(20);
     });
 
     it.skip('should continue adding smaller data to the left down the tree', () => {
-      tree.insert(new Node(20));
-      tree.insert(new Node(10));
-      tree.insert(new Node(5));
+      tree.insert(20);
+      tree.insert(10);
+      tree.insert(5);
 
       expect(tree.root.left.left.data).to.equal(5);
     });
 
     it.skip('should continue adding larger data to the right down the tree', () => {
-      tree.insert(new Node(20));
-      tree.insert(new Node(30));
-      tree.insert(new Node(35));
-      tree.insert(new Node(32));
-      tree.insert(new Node(25));
+      tree.insert(20);
+      tree.insert(30);
+      tree.insert(35);
+      tree.insert(32);
+      tree.insert(25);
 
       expect(tree.root.right.right.data).to.equal(35);
       expect(tree.root.right.right.left.data).to.equal(32);
@@ -66,13 +66,13 @@ describe('BinaryTree', () => {
   describe('FIND', () => {
 
     beforeEach(() => {
-      tree.insert(new Node(4));
-      tree.insert(new Node(6));
-      tree.insert(new Node(7));
-      tree.insert(new Node(2));
-      tree.insert(new Node(3));
-      tree.insert(new Node(5));
-      tree.insert(new Node(1));
+      tree.insert(4);
+      tree.insert(6);
+      tree.insert(7);
+      tree.insert(2);
+      tree.insert(3);
+      tree.insert(5);
+      tree.insert(1);
     });
 
 
@@ -160,7 +160,7 @@ describe('BinaryTree', () => {
 
     });
   });
-  
+
   describe('getCount', () => {});
 
   describe('getSum', () => {});
@@ -174,13 +174,13 @@ describe('BinaryTree', () => {
         *    / \  / \
         *   1  3 5  7
         */
-      tree.insert(new Node(4));
-      tree.insert(new Node(6));
-      tree.insert(new Node(7));
-      tree.insert(new Node(2));
-      tree.insert(new Node(3));
-      tree.insert(new Node(5));
-      tree.insert(new Node(1));
+      tree.insert(4);
+      tree.insert(6);
+      tree.insert(7);
+      tree.insert(2);
+      tree.insert(3);
+      tree.insert(5);
+      tree.insert(1);
     });
 
     it('should delete node with no children', () => {
@@ -202,7 +202,7 @@ describe('BinaryTree', () => {
 
       expect(tree.root.left.left).to.equal(null);
 
-      tree.insert(new Node(8));
+      tree.insert(8);
 
       expect(tree.root.right.right.right.data).to.equal(8)
       expect(tree.root.right.right.data).to.equal(7)
