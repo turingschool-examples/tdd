@@ -12,7 +12,7 @@ describe('BinaryTree', () => {
     expect(tree.root).to.equal(null);
   });
 
-  describe('INSERT', () => {
+  describe('insert', () => {
     it.skip('should be able to add a node to the Tree', () => {
       tree.insert(20);
 
@@ -62,7 +62,7 @@ describe('BinaryTree', () => {
 
   });
 
-  describe('FIND', () => {
+  describe('find', () => {
 
     beforeEach(() => {
       tree.insert(4);
@@ -117,28 +117,34 @@ describe('BinaryTree', () => {
 
   describe('toArray', () => {
     it.skip('should return an empty array if no nodes exist', () => {
+      let tree = new BinaryTree();
 
+      expect(tree.toArray()).to.deep.equal([]);
     });
 
     it.skip('should return data from the tree into an array, starting with the root, then all left values, then all right', () => {
       tree.insert(5);
-      tree.insert(4);
+      tree.insert(3);
       tree.insert(6);
       tree.insert(7);
-      tree.insert(3);
+      tree.insert(4);
 
       expect(tree.toArray()).to.deep.equal([3, 4, 5, 6, 7]);
     });
   });
 
-  describe('MIN and MAX', () => {
+  describe('min and max', () => {
 
     it.skip('min should return null if no nodes exist', () => {
+      let tree = new BinaryTree();
 
+      expect(tree.min()).to.equal(null);
     });
 
     it.skip('max should return null if no nodes exist', () => {
+      let tree = new BinaryTree();
 
+      expect(tree.max()).to.equal(null);
     });
 
     beforeEach(() => {
@@ -152,11 +158,11 @@ describe('BinaryTree', () => {
     });
 
     it.skip('should find the min value', () => {
-
+      expect(tree.min()).to.equal(1);
     });
 
     it.skip('should find the max value', () => {
-
+      expect(tree.max()).to.equal(7);
     });
   });
 
@@ -164,7 +170,7 @@ describe('BinaryTree', () => {
 
   describe('getSum', () => {});
 
-  describe('DELETE', () => {
+  describe('delete', () => {
     beforeEach(() => {
        /*
         *        4
