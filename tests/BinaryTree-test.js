@@ -1,6 +1,5 @@
 import { expect } from 'chai';
 import BinaryTree from '../scripts/BinaryTree';
-import Node from '../scripts/Node';
 
 describe('BinaryTree', () => {
   let tree;
