@@ -21,7 +21,12 @@ describe('Zookeeper', () => {
   it.skip ('zookeeper should be able to grab food from inventory', () => {
     let food = zookeeper.grabFood('plant')
 
-    expect(food).to.equal('bamboo');
+    expect(food).to.equal([
+      {name: 'bamboo', type: 'plant'},
+      {name: 'corn', type: 'plant' },
+      {name: 'seaweed', type: 'plant'},
+      {name: 'fruit', type: 'plant'}
+    ]);
   })
 
   it.skip('zookeeper should be able to take inventory', () => {

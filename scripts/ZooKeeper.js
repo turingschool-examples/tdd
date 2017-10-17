@@ -5,12 +5,13 @@ export default class ZooKeeper {
       bamboo: 'plant',
       steak: 'meat',
       corn: 'plant',
-      grass: 'plant',
+      seaweed: 'plant',
       pork: 'meat',
       fruit: 'plant',
-      zeebra: 'meat',
-      alpaca: 'meat'
+      poultry: 'meat',
+      fish: 'meat'
     };
+    this.animals = [];
   }
 
   sayHi() {
