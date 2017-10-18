@@ -1,7 +1,7 @@
 export default class Panda {
-  constructor(name, age) {
+  constructor(name, diet) {
     this.name = name;
-    this.age = age;
+    this.diet = diet;
   }
 
   sayHi() {

@@ -10,7 +10,7 @@ describe('Zookeeper', () => {
   })
 
   it.skip('should be able to add animals', () => {
-    let po = new Panda('Po Ping', 27);
+    let po = new Panda('Po Ping', 'plant');
 
     zookeeper.addAnimal(po);
 
