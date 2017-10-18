@@ -18,14 +18,25 @@ describe('Zookeeper', () => {
     expect(zookeeper.animals).to.deep.equal([ po ]);
   });
 
-  it.skip ('zookeeper should be able to grab food from inventory', () => {
+  it.skip('zookeeper should be able to grab food from inventory based on type', () => {
     let food = zookeeper.grabFood('plant')
 
     expect(food).to.deep.equal([
-      {name: 'Bamboo', type: 'plant'},
-      {name: 'Corn', type: 'plant' },
-      {name: 'Seaweed', type: 'plant'},
-      {name: 'Fruit', type: 'plant'}
+      { name: 'Bamboo',  type: 'plant' },
+      { name: 'Corn',    type: 'plant' },
+      { name: 'Seaweed', type: 'plant' },
+      { name: 'Fruit',   type: 'plant' }
+    ]);
+  })
+
+  it.skip('zookeeper should be able to grab food from inventory based on type', () => {
+    let food = zookeeper.grabFood('meat')
+
+    expect(food).to.deep.equal([
+      { name: 'Steak',    type: 'meat' },
+      { name: 'Pork',     type: 'meat' },
+      { name: 'Poultry',  type: 'meat' },
+      { name: 'Fish',     type: 'meat' }
     ]);
   })
 
