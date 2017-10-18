@@ -3,14 +3,14 @@ export default class ZooKeeper {
     this.name = name;
     this.animals = [];
     this.fridge = {
-      { name: 'bamboo',   type: 'plant' },
-      { name: 'corn',     type: 'plant' },
-      { name: 'fruit',    type: 'plant' },
-      { name: 'seaweed',  type: 'plant' },
-      { name: 'steak',    type: 'meat' },
-      { name: 'pork',     type: 'meat' },
-      { name: 'poultry',  type: 'meat' },
-      { name: 'fish',     type: 'meat' },
+      { name: 'Bamboo',   type: 'plant' },
+      { name: 'Corn',     type: 'plant' },
+      { name: 'Fruit',    type: 'plant' },
+      { name: 'Seaweed',  type: 'plant' },
+      { name: 'Steak',    type: 'meat' },
+      { name: 'Pork',     type: 'meat' },
+      { name: 'Poultry',  type: 'meat' },
+      { name: 'Fish',     type: 'meat' },
     };
   }
 
