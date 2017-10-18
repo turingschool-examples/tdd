@@ -20,6 +20,11 @@ describe('Merge Sort', function () {
   	it('should be able to sort letters alphabetically', () => {
   		const letters = ['c', 'e', 'a', 'd', 'l', 'm'];
   		assert.deepEqual(mergeSort(letters), ['a', 'c', 'd', 'e', 'l', 'm'] );
-  	})  	
+  	})
+
+  	it('should sort a small array of numbers that includes negative numbers', () => {
+    	const numbers = [4, 3, -2, 2, 1, -5];
+		assert.deepEqual(mergeSort(numbers), [-5, -2, 1, 2, 3, 4] );
+  	});  	
 
 });

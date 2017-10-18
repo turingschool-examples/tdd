@@ -22,4 +22,9 @@ describe('Quick Sort', function () {
   		assert.deepEqual(quickSort(letters), ['a', 'c', 'd', 'e', 'l', 'm'] );
   	})
 
+  	it('should sort a small array of numbers that includes negative numbers', () => {
+    	const numbers = [4, 3, -2, 2, 1, -5];
+		assert.deepEqual(quickSort(numbers), [-5, -2, 1, 2, 3, 4] );
+  	});
+
   });
