@@ -22,10 +22,10 @@ describe('Zookeeper', () => {
     let food = zookeeper.grabFood('plant')
 
     expect(food).to.equal([
-      {name: 'bamboo', type: 'plant'},
-      {name: 'corn', type: 'plant' },
-      {name: 'seaweed', type: 'plant'},
-      {name: 'fruit', type: 'plant'}
+      {name: 'Bamboo', type: 'plant'},
+      {name: 'Corn', type: 'plant' },
+      {name: 'Seaweed', type: 'plant'},
+      {name: 'Fruit', type: 'plant'}
     ]);
   })
 
@@ -33,8 +33,18 @@ describe('Zookeeper', () => {
     let fridgeInventory = zookeeper.takeFridgeInventory();
 
     expect(fridgeInventory).to.deep.equal({
-      plant: 4,
-      meat: 4
+      plant: [
+        { name: 'Bamboo',   type: 'plant' },
+        { name: 'Corn',     type: 'plant' },
+        { name: 'Fruit',    type: 'plant' },
+        { name: 'Seaweed',  type: 'plant' },
+      ],
+      meat: [
+        { name: 'Steak',    type: 'meat' },
+        { name: 'Pork',     type: 'meat' },
+        { name: 'Poultry',  type: 'meat' },
+        { name: 'Fish',     type: 'meat' },
+      ]
     });
   })
 })
