@@ -113,7 +113,9 @@ describe('BinaryTree', () => {
     });
 
     it.skip('should return null if no match is found', () => {
+      let node = tree.find(12);
 
+      expect(node).to.equal(null);
     });
 
     it.skip('should be able to find the root', () => {
@@ -155,7 +157,21 @@ describe('BinaryTree', () => {
       expect(tree.toArray()).to.deep.equal([]);
     });
 
-    it.skip('should return data from the tree into an array, starting with the root, then all left values, then all right', () => {
+    it.skip('should return data from the tree into an array, with numbers in order from least to greatest', () => {
+      tree.insert(5);
+
+      expect(tree.toArray()).to.deep.equal([5]);
+    });
+
+    it.skip('should return data from the tree into an array, with numbers in order from least to greatest', () => {
+      tree.insert(5);
+      tree.insert(3);
+      tree.insert(8);
+
+      expect(tree.toArray()).to.deep.equal([3, 5, 8]);
+    });
+
+    it.skip('should return data from the tree into an array, with numbers in order from least to greatest', () => {
       tree.insert(5);
       tree.insert(3);
       tree.insert(6);
@@ -171,24 +187,24 @@ describe('BinaryTree', () => {
   describe('getSum', () => {});
 
   describe('delete', () => {
-    beforeEach(() => {
-       /*
-        *        4
-        *      /   \
-        *     2    6
-        *    / \  / \
-        *   1  3 5  7
-        */
-      tree.insert(4);
-      tree.insert(6);
-      tree.insert(7);
-      tree.insert(2);
-      tree.insert(3);
-      tree.insert(5);
-      tree.insert(1);
-    });
+    // beforeEach(() => {
+    //    /*
+    //     *        4
+    //     *      /   \
+    //     *     2    6
+    //     *    / \  / \
+    //     *   1  3 5  7
+    //     */
+    //   tree.insert(4);
+    //   tree.insert(6);
+    //   tree.insert(7);
+    //   tree.insert(2);
+    //   tree.insert(3);
+    //   tree.insert(5);
+    //   tree.insert(1);
+    // });
 
-    it('should delete node with no children', () => {
+    it.skip('should delete node with no children', () => {
       let node = tree.find(1);
 
       expect(tree.root.left.left).to.equal(node);
@@ -198,7 +214,7 @@ describe('BinaryTree', () => {
       expect(tree.root.left.left).to.equal(null);
     })
 
-    it('should delete node with one child', () => {
+    it.skip('should delete node with one child', () => {
       let node = tree.find(1);
 
       expect(tree.root.left.left).to.equal(node);
@@ -216,7 +232,7 @@ describe('BinaryTree', () => {
       expect(tree.root.right.right.right).to.equal(null)
     })
 
-    it('should delete node with two children', () => {
+    it.skip('should delete node with two children', () => {
       let node = tree.find(7);
 
       expect(tree.root.right.right).to.equal(node);
