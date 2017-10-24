@@ -62,6 +62,39 @@ describe('BinaryTree', () => {
 
   });
 
+  describe('min and max', () => {
+
+    it.skip('min should return null if no nodes exist', () => {
+      let tree = new BinaryTree();
+
+      expect(tree.min()).to.equal(null);
+    });
+
+    it.skip('max should return null if no nodes exist', () => {
+      let tree = new BinaryTree();
+
+      expect(tree.max()).to.equal(null);
+    });
+
+    beforeEach(() => {
+      tree.insert(4);
+      tree.insert(6);
+      tree.insert(7);
+      tree.insert(2);
+      tree.insert(3);
+      tree.insert(5);
+      tree.insert(1);
+    });
+
+    it.skip('should find the min value', () => {
+      expect(tree.min()).to.equal(1);
+    });
+
+    it.skip('should find the max value', () => {
+      expect(tree.max()).to.equal(7);
+    });
+  });
+
   describe('find', () => {
 
     beforeEach(() => {
@@ -113,39 +146,6 @@ describe('BinaryTree', () => {
       expect(node).to.equal(tree.root.right.left)
     });
 
-  });
-
-  describe('min and max', () => {
-
-    it.skip('min should return null if no nodes exist', () => {
-      let tree = new BinaryTree();
-
-      expect(tree.min()).to.equal(null);
-    });
-
-    it.skip('max should return null if no nodes exist', () => {
-      let tree = new BinaryTree();
-
-      expect(tree.max()).to.equal(null);
-    });
-
-    beforeEach(() => {
-      tree.insert(4);
-      tree.insert(6);
-      tree.insert(7);
-      tree.insert(2);
-      tree.insert(3);
-      tree.insert(5);
-      tree.insert(1);
-    });
-
-    it.skip('should find the min value', () => {
-      expect(tree.min()).to.equal(1);
-    });
-
-    it.skip('should find the max value', () => {
-      expect(tree.max()).to.equal(7);
-    });
   });
 
   describe('toArray', () => {
