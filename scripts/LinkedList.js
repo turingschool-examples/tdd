@@ -108,7 +108,6 @@ export default class LinkedList {
     while (currNode) {
       if (currNode.data === data) {
         prevNode.next = currNode.next;
-        // currNode = null;
         this.length--;
         break;
       } else {
