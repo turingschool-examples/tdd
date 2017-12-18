@@ -55,7 +55,7 @@ describe('LINKED LIST', () => {
       expect(list.head.next.data).to.equal('duck');
 
       // remove goose from list
-      result = list.shift();
+      let result = list.shift();
       expect(result.data).to.equal('goose')
 
       // duck should now be back at the start of the list
@@ -373,7 +373,7 @@ describe('LINKED LIST', () => {
 
     it.skip('should insert nodes after other nodes', () => {
       expect(list.length).to.eq(2);
-      list.insertAgfter('dark', 'and');
+      list.insertAfter('dark', 'and');
       list.insertAfter('stormy', 'night');
       expect(list.length).to.eq(4);
       expect(list.toArray()).to.deep.equal(['dark', 'and', 'stormy', 'night']);
