@@ -14,10 +14,10 @@ describe('NODE', () => {
 
   it('should default next to null', () => {
     expect(node.next).to.equal(null);
+    expect(node.prev).to.equal(null);
   })
 
   it('should take data and assign it to data prop', () => {
     expect(node.data).to.equal('pizza')
   })
-
 })

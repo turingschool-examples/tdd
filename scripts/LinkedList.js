@@ -129,4 +129,87 @@ export default class LinkedList {
 
     return array;
   }
+
+  include(data) {
+    let currNode = this.head;
+
+    while (currNode) {
+      if (currNode.data === data) {
+        return true;
+      } else {
+        currNode = currNode.next
+      }
+    }
+
+    return false;
+  }
+
+  index(data) {
+    let nodeToCheck = this.head;
+    let count = 0;
+
+    while (nodeToCheck) {
+      if (nodeToCheck.data === data) {
+        return count;
+      } else if (nodeToCheck.next === null) {
+        return null;
+      }
+
+      nodeToCheck = nodeToCheck.next;
+      count++;
+    }
+  }
+
+  insert(index, data) {
+    let currNode = this.head;
+    let count = 0;
+    let newNode = new Node(data);
+
+    while (count <= index) {
+      count++;
+
+      if (count === index) {
+        newNode.next = currNode.next;
+        currNode.next = newNode;
+        this.length++;
+      }
+
+      currNode = currNode.next;
+    }
+  }
+
+  insertAfter(find, data) {
+    let currNode = this.head;
+    let newNode = new Node(data);
+
+    if (!currNode.next) {
+      return null;
+    }
+
+    while (currNode.data !== find) {
+      currNode = currNode.next
+    }
+
+    newNode.next = currNode.next;
+    currNode.next = newNode;
+    this.length++;
+  }
+
+  distance(first, second) {
+    let count;
+    let currNode = this.head;
+
+    while (currNode) {
+      if (currNode.data === first) {
+        count = 0;
+      }
+
+      count++;
+      currNode = currNode.next;
+
+      if (currNode.data === second) {
+        return count;
+      }
+    }
+  }
 }
