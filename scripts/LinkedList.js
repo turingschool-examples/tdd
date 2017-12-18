@@ -99,19 +99,34 @@ export default class LinkedList {
   delete(data) {
     if (this.head.data === data) {
       this.length--;
-      this.head = null;
+      this.head = this.head.next;
     }
 
     let currNode = this.head;
+    let prevNode = null;
 
     while (currNode) {
       if (currNode.data === data) {
-        currNode = null;
+        prevNode.next = currNode.next;
+        // currNode = null;
         this.length--;
-        // break;
+        break;
       } else {
+        prevNode = currNode;
         currNode = currNode.next;
       }
     }
+  }
+
+  toArray() {
+    let array = [];
+    let currNode = this.head;
+
+    while (currNode) {
+      array.push(currNode.data);
+      currNode = currNode.next;
+    }
+
+    return array;
   }
 }
