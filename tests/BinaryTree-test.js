@@ -8,7 +8,7 @@ describe('BinaryTree', () => {
     tree = new BinaryTree();
   });
 
-  it.skip('should have a root node defaulted to null', () => {
+  it('should have a root node defaulted to null', () => {
     expect(tree.root).to.equal(null);
   });
 
@@ -187,22 +187,21 @@ describe('BinaryTree', () => {
   describe('getSum', () => {});
 
   describe('delete', () => {
-    // beforeEach(() => {
-    //    /*
-    //     *        4
-    //     *      /   \
-    //     *     2    6
-    //     *    / \  / \
-    //     *   1  3 5  7
-    //     */
-    //   tree.insert(4);
-    //   tree.insert(6);
-    //   tree.insert(7);
-    //   tree.insert(2);
-    //   tree.insert(3);
-    //   tree.insert(5);
-    //   tree.insert(1);
-    // });
+    beforeEach(() => {
+       /*
+        *        4
+        *      /   \
+        *     2     6
+        *    / \   / 
+        *   1   3 5   
+        */
+      tree.insert(4);
+      tree.insert(6);
+      tree.insert(2);
+      tree.insert(3);
+      tree.insert(5);
+      tree.insert(1);
+    });
 
     it.skip('should delete node with no children', () => {
       let node = tree.find(1);
@@ -215,35 +214,30 @@ describe('BinaryTree', () => {
     })
 
     it.skip('should delete node with one child', () => {
-      let node = tree.find(1);
 
-      expect(tree.root.left.left).to.equal(node);
+      expect(tree.root.right.left.data).to.equal(5)
+      
+      tree.delete(6)
+      
+      // move five to location where six node was
+      expect(tree.root.right.data).to.equal(5)
 
-      expect(tree.delete(1)).to.equal(node);
-
-      expect(tree.root.left.left).to.equal(null);
-
-      tree.insert(8);
-
-      expect(tree.root.right.right.right.data).to.equal(8)
-      expect(tree.root.right.right.data).to.equal(7)
-      tree.delete(7)
-      expect(tree.root.right.right.data).to.equal(8)
-      expect(tree.root.right.right.right).to.equal(null)
+      // five should not have a left node
+      expect(tree.root.right.left).to.equal(null)
     })
 
     it.skip('should delete node with two children', () => {
-      let node = tree.find(7);
+      let node = tree.find(2);
 
-      expect(tree.root.right.right).to.equal(node);
+      expect(tree.root.left).to.equal(node);
 
-      tree.delete(6);
-      console.log(JSON.stringify(tree, null, 4));
-      node = tree.find(7);
-      expect(tree.root.right).to.equal(node);
+      tree.delete(2);
 
-      // expect(tree.root.right.right).to.equal(null);
-      // expect(tree.root.right.left.data).to.equal(5);
+      node = tree.find(1);
+      expect(tree.root.left).to.equal(node);
+
+      expect(tree.root.left.left).to.equal(null);
+      expect(tree.root.left.right.data).to.equal(3);
     })
   })
 
