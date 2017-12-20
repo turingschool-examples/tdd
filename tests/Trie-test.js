@@ -21,37 +21,61 @@ describe.only('Trie', function() {
 
   it('should insert a word', () => {
     trie.insert('ardvark');
-    expect(trie.root.a.data).to.equal('a');
-    expect(trie.root.a.r.data).to.equal('r')
-    expect(trie.root.a.r.d.data).to.equal('d');
-    expect(trie.root.a.r.d.v.a.r.k.data).to.equal('k');
-    expect(trie.root.a.r.d.v.a.r.k.isCompleted).to.equal(true);
+    expect(trie.root.children.a.data).to.equal('a');
+    expect(trie.root.children.a.children.r.data).to.equal('r')
+    expect(trie.root.children.a.children.r.children.d.data).to.equal('d');
+    expect(trie.root.children.a.children.r.children.d.children.v.children.a.children.r.children.k.data).to.equal('k');
+    expect(trie.root.children.a.children.r.children.d.children.v.children.a.children.r.children.k.isCompleted).to.equal(true);
   });
 
   it('should insert multiple words and increase completed count', () => {
     trie.insert('platypus');
     trie.insert('capybara');
-
-    expect(trie.root.p.l.a.t.y.p.u.s.data).to.equal('s');
-    expect(trie.root.p.l.a.t.y.p.u.s.isCompleted).to.equal(true);
-
-    expect(trie.root.c.a.p.y.b.a.r.a.data).to.equal('a');
-    expect(trie.root.c.a.p.y.b.a.r.a.isCompleted).to.equal(true);
+// console.log( JSON.stringify(trie, null, 4) );
+    expect(trie.root.children.p.children.l.children.a.children.t.children.y.children.p.children.u.children.s.data).to.equal('s');
+    expect(trie.root.children.p.children.l.children.a.children.t.children.y.children.p.children.u.children.s.isCompleted).to.equal(true);
+  
+    expect(trie.root.children.c.children.a.children.p.children.y.children.b.children.a.children.r.children.a.data).to.equal('a');
+    expect(trie.root.children.c.children.a.children.p.children.y.children.b.children.a.children.r.children.a.isCompleted).to.equal(true);
   
     expect(trie.completed).to.be.equal(2);
+
   });
 
-  it('should insert another word', () => {
+  it('should insert several words that start with the same letter and not create new nodes', () => {
     trie.insert('armadillo');
     trie.insert('ardvark');
     trie.insert('anteater');
-
-    console.log(trie.root.a);
-    // expect(trie.root.a).to.equal('o');
-    // expect(trie.root.o.k.data).to.equal('k')
-    // expect(trie.root.o.k.a.p.i.data).to.equal('i');
-    // expect(trie.root.o.k.a.p.i.isCompleted).to.equal(true);
+    expect(trie.root.children.a.children.r.data).to.equal('r');
+    expect(trie.root.children.a.children.r.children.m.data).to.equal('m');
+    expect(trie.root.children.a.children.r.children.d.data).to.equal('d');
+    expect(trie.root.children.a.children.n.data).to.equal('n');
   });
+
+  it('should suggest an array of one word that match the word you put in', () => {
+    trie.insert('pizza');
+    expect(trie.suggest('pi')).to.deep.equal(["pizza"]);
+  });
+
+  it('should suggest an array of words that match the words you are putting in', () => {
+    trie.insert('pizza');
+    trie.insert('pizzeria');
+    trie.insert('pill');
+    // console.log( JSON.stringify(trie, null, 4) );
+    expect(trie.suggest('pi')).to.deep.equal(["pizza", "pizzeria", "pill"]);
+  });
+
+
+//   completion.suggest("piz")
+// => ["pizza"]
+
+// completion.insert("pizzeria")
+
+// completion.suggest("piz")
+// => ["pizza", "pizzeria"]
+
+// completion.suggest('a')
+// => ["apple"]
 
 
 })
